@@ -37,3 +37,8 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
+    - task: AzureKeyVault@1
+      inputs:
+        azureSubscription: 'Azure subscription 1(9676e707-bd54-4853-89dc-bd6dcb6447c5)'
+        KeyVaultName: 'TenableCSDemoKeyVault2'
+        SecretsFilter: '*'
